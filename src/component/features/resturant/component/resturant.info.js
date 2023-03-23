@@ -4,8 +4,16 @@ import styled from "styled-components/native";
 import { Card } from "react-native-paper";
 
 const Title = styled.Text`
-  padding: 16px;
-  color: maroon;
+  padding: ${(props) => props.theme.space[3]};
+  color: ${(props) => props.theme.colors.text.primary};
+`;
+const ResturantCard = styled(Card)`
+  background-color: ${(props) => props.theme.colors.bg.primary};
+  border-radius: ${(props) => props.theme.sizes[1]};
+`;
+const ResturantCardCover = styled(Card.Cover)`
+  background-color: ${(props) => props.theme.colors.bg.primary};
+  padding: ${(props) => props.theme.space[2]};
 `;
 
 const ResturantInfoCard = ({ resturant = {} }) => {
@@ -23,23 +31,12 @@ const ResturantInfoCard = ({ resturant = {} }) => {
 
   return (
     <TouchableOpacity>
-      <Card elevation={5} style={styles.card}>
-        <Card.Cover source={{ uri: photos[0] }} style={styles.cover} />
+      <ResturantCard elevation={5}>
+        <ResturantCardCover key={name} source={{ uri: photos[0] }} />
         <Title>{name}</Title>
-      </Card>
+      </ResturantCard>
     </TouchableOpacity>
   );
 };
 
 export default ResturantInfoCard;
-
-const styles = StyleSheet.create({
-  card: {
-    backgroundColor: "white",
-  },
-  cover: {
-    padding: 10,
-    backgroundColor: "white",
-  },
- 
-});
