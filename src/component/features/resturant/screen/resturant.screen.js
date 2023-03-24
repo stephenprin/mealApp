@@ -42,7 +42,8 @@ const Search = styled.View`
   padding: ${(props) => props.theme.space[3]};
 `;
 const Main = styled.View`
-  background-color: blue;
+  background-color: ${(props) => props.theme.colors.bg.primary};
   flex: 1;
   padding: ${(props) => props.theme.space[3]};
+  padding-top: ${(props) => props.theme.space[2]};
 `;

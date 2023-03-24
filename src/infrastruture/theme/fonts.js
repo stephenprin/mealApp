@@ -1,5 +1,6 @@
 export const fonts = {
-  body: "Oswald_400Regular",
+  body: "Farsan_400Regular",
+  heading2: "Raleway_500Regular",
   heading: "Lato_400Regular",
   monospace: "Oswald_400Regular",
 };
